@@ -21,7 +21,8 @@ int main() {
 void mostrarDatos(){ //Funcion para mostrar los datos del archivo
     string line;
     vector<string> lines; //Vector para guardar los datos del archivo
-    ifstream myfile ("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::in); //Se abre el archivo en modo lectura
+    ifstream myfile ("C:/Users/User/CLionProjects/Tp/terminales.txt", ios::in);
+  //  ifstream myfile ("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::in); //Se abre el archivo en modo lectura
     if (myfile.is_open()){ //Si el archivo se abre
         while(getline(myfile,line)){ //y se pueda leer una linea
             lines.push_back(line); //Se guarda en el vector
@@ -37,26 +38,27 @@ void mostrarDatos(){ //Funcion para mostrar los datos del archivo
 
 void agregarTerminal(){
     ofstream myfile;
-    myfile.open("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::app); //Se abre el archivo en modo append
+    myfile.open("C:/Users/User/CLionProjects/Tp/terminales.txt", ios::app);
+   // myfile.open("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::app); //Se abre el archivo en modo append
     string codigo, nombre, ciudad, pais;
     float superficie;
     int cantidadTerminales, destinosNacionales, destinosInternacionales;
-    cout<<"Ingrese el codigo de la terminal: "<<endl;
-    cin>>codigo;
-    cout<<"Ingrese el nombre de la terminal: "<<endl;
-    cin>>nombre;
-    cout<<"Ingrese la ciudad de la terminal: "<<endl;
-    cin>>ciudad;
-    cout<<"Ingrese el pais de la terminal: "<<endl;
-    cin>>pais;
-    cout<<"Ingrese la superficie de la terminal: "<<endl;
-    cin>>superficie;
-    cout<<"Ingrese la cantidad de terminales de la terminal: "<<endl;
-    cin>>cantidadTerminales;
-    cout<<"Ingrese la cantidad de destinos nacionales de la terminal: "<<endl;
-    cin>>destinosNacionales;
-    cout<<"Ingrese la cantidad de destinos internacionales de la terminal: "<<endl;
-    cin>>destinosInternacionales;
+    cout<<"Ingrese el codigo de la terminal: ";
+    cin>>codigo;cout<<endl;
+    cout<<"Ingrese el nombre de la terminal: ";
+    cin>>nombre;cout<<endl;
+    cout<<"Ingrese la ciudad de la terminal: ";
+    cin>>ciudad;cout<<endl;
+    cout<<"Ingrese el pais de la terminal: ";
+    cin>>pais;cout<<endl;
+    cout<<"Ingrese la superficie de la terminal: ";
+    cin>>superficie;cout<<endl;
+    cout<<"Ingrese la cantidad de terminales de la terminal: ";
+    cin>>cantidadTerminales;cout<<endl;
+    cout<<"Ingrese la cantidad de destinos nacionales de la terminal: ";
+    cin>>destinosNacionales;cout<<endl;
+    cout<<"Ingrese la cantidad de destinos internacionales de la terminal: ";
+    cin>>destinosInternacionales;cout<<endl;
     myfile<<codigo<<" "<<nombre<<" "<<ciudad<<" "<<pais<<" "<<superficie<<" "<<cantidadTerminales<<" "<<destinosNacionales<<" "<<destinosInternacionales<<endl; //Se escribe en el archivo
     myfile.close(); //Se cierra el archivo
 }
@@ -64,7 +66,9 @@ void agregarTerminal(){
 void quitarTerminal(){
     string line;
     vector<string> lines; //Se crea un vector para guardar los datos del archivo
-    ifstream myfile ("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::in);  //Se abre el archivo en modo lectura
+
+    ifstream myfile ("C:/Users/User/CLionProjects/Tp/terminales.txt", ios::in);
+   // ifstream myfile ("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::in);  //Se abre el archivo en modo lectura
     if (myfile.is_open()){ //Si el archivo se abre
         while(getline(myfile,line)){ //y se pueda leer una linea
             lines.push_back(line); //Se guarda en el vector
@@ -80,7 +84,9 @@ void quitarTerminal(){
     cin>>numero;
     lines.erase(lines.begin()+numero-1); //Se elimina la linea del vector
     ofstream myfile2; //Se crea un archivo nuevo
-    myfile2.open("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::out); //Se abre el archivo nuevo en modo escritura
+
+    myfile2.open("C:/Users/User/CLionProjects/Tp/terminales.txt", ios::out);
+   // myfile2.open("C:/Users/Administrador/CLionProjects/untitled/terminales.txt", ios::out); //Se abre el archivo nuevo en modo escritura
     for(int i=0; i<lines.size(); ++i){ //Se recorre el vector para escribir los datos en el archivo nuevo
         myfile2<<lines[i]<<endl;
     }
